@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91今日大乱斗-今日大乱斗热点合集_91大乱斗黑料爆料速览</title>
+<meta name="description" content="91今日大乱斗汇总当日热点乱斗话题与爆料合集，按条目梳理瓜点脉络、争议焦点与围观入口，方便快速了解今日大乱斗的来龙去脉。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315121f'/%3E%3Ccircle cx='24' cy='26' r='9' fill='%23ff4d6d'/%3E%3Ccircle cx='41' cy='38' r='9' fill='%23ffb703'/%3E%3Cpath d='M32 12l3 8 8 3-8 3-3 8-3-8-8-3 8-3z' fill='%23ffffff'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0f0d17;
+    --bg-soft:#171426;
+    --card:#1c1830;
+    --line:#2e2947;
+    --ink:#f3f0ff;
+    --muted:#a79fc4;
+    --red:#ff4d6d;
+    --amber:#ffb703;
+    --violet:#8b7bff;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:radial-gradient(1200px 600px at 15% -10%, #2a1f4d 0%, transparent 60%),
+               radial-gradient(900px 500px at 100% 0%, #3a1630 0%, transparent 55%),
+               var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,13,23,.82);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{display:flex;align-items:center;gap:18px;min-height:66px;flex-wrap:wrap;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.5px;}
+  .logo svg{width:32px;height:32px;flex:none;}
+  .logo .brand{
+    background:linear-gradient(90deg,#fff 0%,#ffd6de 60%,#ffb703 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main a{
+    font-size:14px;color:var(--muted);padding:7px 12px;border-radius:999px;
+    transition:.2s;
+  }
+  nav.main a:hover{color:var(--ink);background:rgba(255,255,255,.07);}
+  nav.main a.cta{color:#1a1024;background:linear-gradient(90deg,var(--amber),var(--red));font-weight:700;}
+  nav.main a.cta:hover{filter:brightness(1.1);}
+
+  /* Hero */
+  .hero{padding:54px 0 40px;position:relative;}
+  .hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:38px;align-items:center;}
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--amber);
+    border:1px solid rgba(255,183,3,.35);background:rgba(255,183,3,.08);
+    padding:4px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .tag .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(255,77,109,.2);}
+  h1{
+    font-size:clamp(30px,5vw,50px);line-height:1.18;letter-spacing:1px;font-weight:900;
+    background:linear-gradient(95deg,#ffffff 10%,#ffd6de 45%,#ffb703 95%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{color:var(--muted);font-size:16px;margin-top:16px;max-width:560px;}
+  .hero-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;
+    font-weight:700;font-size:15px;transition:.2s;border:1px solid transparent;
+  }
+  .btn-primary{background:linear-gradient(90deg,var(--red),var(--violet));color:#fff;box-shadow:0 10px 30px -12px rgba(255,77,109,.7);}
+  .btn-primary:hover{filter:brightness(1.1);transform:translateY(-1px);}
+  .btn-ghost{border-color:var(--line);color:var(--ink);background:rgba(255,255,255,.04);}
+  .btn-ghost:hover{background:rgba(255,255,255,.1);}
+  .hero-visual{position:relative;display:flex;justify-content:center;}
+  .hero-visual svg{width:100%;max-width:360px;height:auto;filter:drop-shadow(0 24px 50px rgba(139,123,255,.25));}
+
+  /* Stats strip */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;}
+  .stat{
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;
+  }
+  .stat b{display:block;font-size:24px;font-weight:900;color:var(--amber);}
+  .stat span{font-size:13px;color:var(--muted);}
+
+  /* Section common */
+  section.block{padding:46px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:24px;flex-wrap:wrap;}
+  .sec-head h2{font-size:clamp(21px,3vw,27px);font-weight:800;letter-spacing:.5px;}
+  .sec-head h2::before{content:"";display:inline-block;width:6px;height:20px;border-radius:3px;background:linear-gradient(180deg,var(--red),var(--violet));margin-right:10px;vertical-align:-3px;}
+  .sec-head p{color:var(--muted);font-size:14px;max-width:520px;}
+
+  /* Hot list cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;display:flex;flex-direction:column;gap:10px;transition:.25s;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(139,123,255,.55);box-shadow:0 18px 40px -24px rgba(139,123,255,.8);}
+  .card .meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);}
+  .pill{font-size:11px;padding:2px 9px;border-radius:999px;font-weight:700;}
+  .pill.hot{color:#fff;background:linear-gradient(90deg,var(--red),#ff8a5b);}
+  .pill.gua{color:#1a1024;background:var(--amber);}
+  .pill.talk{color:#e7e2ff;background:rgba(139,123,255,.3);border:1px solid rgba(139,123,255,.5);}
+  .card h3{font-size:16.5px;font-weight:800;line-height:1.5;}
+  .card p{font-size:14px;color:var(--muted);flex:1;}
+  .card .more{font-size:13px;color:var(--amber);font-weight:700;}
+
+  /* Focus split */
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;}
+  .panel{
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+    border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+  }
+  .panel h3{font-size:17px;font-weight:800;margin-bottom:12px;}
+  .panel p{font-size:14.5px;color:#cfc8e8;margin-bottom:12px;}
+  .panel p:last-child{margin-bottom:0;}
+  .panel strong{color:var(--amber);font-weight:800;}
+  .timeline{list-style:none;display:flex;flex-direction:column;gap:14px;}
+  .timeline li{position:relative;padding-left:22px;font-size:14px;color:#cfc8e8;}
+  .timeline li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:var(--violet);box-shadow:0 0 0 4px rgba(139,123,255,.18);}
+  .timeline li b{color:var(--ink);}
+
+  /* Filter */
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
+  .chip{
+    font-size:13.5px;padding:7px 16px;border-radius:999px;border:1px solid var(--line);
+    background:rgba(255,255,255,.03);color:var(--muted);cursor:pointer;transition:.2s;font-family:inherit;
+  }
+  .chip:hover{color:var(--ink);border-color:rgba(139,123,255,.6);}
+  .chip.active{background:linear-gradient(90deg,var(--red),var(--violet));color:#fff;border-color:transparent;font-weight:700;}
+  .feed{display:flex;flex-direction:column;gap:12px;}
+  .feed-item{
+    display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;
+    transition:.2s;
+  }
+  .feed-item:hover{border-color:rgba(255,183,3,.5);}
+  .rank{font-size:20px;font-weight:900;color:var(--violet);text-align:center;font-style:italic;}
+  .feed-item h4{font-size:15px;font-weight:700;margin-bottom:2px;}
+  .feed-item small{font-size:12.5px;color:var(--muted);}
+  .heat{font-size:12.5px;color:var(--amber);white-space:nowrap;font-weight:700;}
+
+  /* Notes / download */
+  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+  .note h3{font-size:16px;margin-bottom:8px;font-weight:800;}
+  .note p{font-size:14px;color:var(--muted);}
+  .dl-row{
+    display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    background:linear-gradient(90deg,rgba(255,77,109,.14),rgba(139,123,255,.14));
+    border:1px solid rgba(139,123,255,.35);border-radius:var(--radius);padding:26px;margin-top:26px;
+  }
+  .dl-row h3{font-size:18px;font-weight:800;margin-bottom:4px;}
+  .dl-row p{font-size:14px;color:var(--muted);}
+  .btn-dl{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:999px;
+    background:linear-gradient(90deg,var(--amber),var(--red));color:#1a1024;font-weight:800;font-size:15px;
+    pointer-events:none;opacity:.95;
+  }
+
+  /* Footer */
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:34px 0 40px;background:rgba(0,0,0,.25);}
+  .foot-grid{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;align-items:flex-start;}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;}
+  .foot-brand svg{width:28px;height:28px;}
+  footer p{font-size:13px;color:var(--muted);max-width:520px;}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);}
+  .foot-links a:hover{color:var(--amber);}
+  .copy{font-size:12.5px;color:#6f6890;margin-top:22px;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:240px;margin:0 auto;}
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .cards{grid-template-columns:1fr;}
+    .split{grid-template-columns:1fr;}
+    .notes{grid-template-columns:1fr;}
+    .feed-item{grid-template-columns:44px 1fr;row-gap:4px;}
+    .feed-item .heat{grid-column:2;justify-self:start;}
+  }
+  @media (max-width:560px){
+    .hero{padding:34px 0 26px;}
+    .nav-row{min-height:auto;padding:12px 0;}
+    nav.main{width:100%;margin-left:0;justify-content:flex-start;}
+    nav.main a{padding:6px 10px;font-size:13px;}
+    section.block{padding:34px 0;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="logo" href="#top" aria-label="91今日大乱斗 首页">
+      <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1c1830"/>
+        <circle cx="24" cy="26" r="9" fill="#ff4d6d"/>
+        <circle cx="41" cy="38" r="9" fill="#ffb703"/>
+        <path d="M32 12l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#ffffff"/>
+      </svg>
+      <span class="brand">91今日大乱斗</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#hot">今日热点</a>
+      <a href="#focus">争议焦点</a>
+      <a href="#feed">乱斗榜单</a>
+      <a href="#notes">围观须知</a>
+      <a class="cta" href="#feed">看今日榜单</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="tag"><span class="dot"></span>当日热点滚动更新</span>
+          <h1>91今日大乱斗</h1>
+          <p class="lead">把一天里散落各处的乱斗话题收拢到一处：谁和谁杠上了、瓜点卡在哪一步、围观的人都在争论什么。91今日大乱斗按条目整理脉络，不替你下结论，只把来龙去脉摆清楚。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#feed">进入今日榜单</a>
+            <a class="btn btn-ghost" href="#hot">先看热点条目</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <svg viewBox="0 0 360 300" role="img" aria-label="乱斗话题聚合示意插画">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff4d6d"/><stop offset="1" stop-color="#8b7bff"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffb703"/><stop offset="1" stop-color="#ff4d6d"/>
+              </linearGradient>
+            </defs>
+            <circle cx="180" cy="150" r="120" fill="none" stroke="#2e2947" stroke-width="2" stroke-dasharray="6 8"/>
+            <circle cx="180" cy="150" r="86" fill="none" stroke="#2e2947" stroke-width="2"/>
+            <circle cx="180" cy="150" r="34" fill="url(#g1)"/>
+            <text x="180" y="157" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">乱斗</text>
+            <circle cx="180" cy="30" r="17" fill="url(#g2)"/>
+            <circle cx="300" cy="150" r="13" fill="#8b7bff"/>
+            <circle cx="180" cy="270" r="11" fill="#ff4d6d"/>
+            <circle cx="62" cy="150" r="15" fill="#ffb703"/>
+            <circle cx="96" cy="66" r="9" fill="#8b7bff"/>
+            <circle cx="266" cy="70" r="10" fill="#ff4d6d"/>
+            <circle cx="262" cy="234" r="9" fill="#ffb703"/>
+            <circle cx="98" cy="232" r="8" fill="#8b7bff"/>
+            <path d="M180 47v40M180 213v40M217 150h66M83 150h64M120 90l32 32M240 90l-32 32" stroke="#3d3660" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>12</b><span>今日聚合话题条目</span></div>
+        <div class="stat"><b>6</b><span>仍在发酵的争议点</span></div>
+        <div class="stat"><b>3</b><span>焦点对线方</span></div>
+        <div class="stat"><b>每日</b><span>更新节奏，以当日为准</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hot cards -->
+  <section class="block" id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今日热点条目</h2>
+        <p>91今日大乱斗把当日讨论度靠前的几条先列出来，每条都标注类型与阶段，方便你判断值不值得跟进。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="meta"><span class="pill hot">热</span><span>对线 · 发酵中</span></div>
+          <h3>两位主播连麦互呛，导火索是一句旧账</h3>
+          <p>起因是三天前直播里的一句回应，被剪成短视频二次传播后放大。目前双方各执一词，原始回放仍在，围观重点在于谁先改口。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill gua">瓜</span><span>爆料 · 待证实</span></div>
+          <h3>某工作室被指抄袭，截图与时间线并排出现</h3>
+          <p>爆料方给出对比图与发布时间线，被指方暂未回应。这类条目在91今日大乱斗里会单独标出“待证实”，避免直接当结论用。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill talk">议</span><span>舆论 · 分化</span></div>
+          <h3>一条评论区的争论，把话题推上了热搜位</h3>
+          <p>争论本身不长，但双方各自搬出往期素材，战线拉得很长。围观者更关心的是这波讨论会不会牵连出新的旧事。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill hot">热</span><span>反转 · 更新中</span></div>
+          <h3>前一天的说法被自己推翻，时间线出现缺口</h3>
+          <p>最初的说法与后来的补充存在明显时间差。91今日大乱斗把两版内容并排保留，读者可自行对比改动部分。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill gua">瓜</span><span>合集 · 多线</span></div>
+          <h3>本周围观合集：多条小瓜合并成一条主线</h3>
+          <p>单独看都算不上大事件，串起来却指向同一条线索。合集页按时间顺序排列，每条都附上最初的出处位置。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill talk">议</span><span>冷处理 · 停更</span></div>
+          <h3>话题方选择沉默，讨论热度自行回落</h3>
+          <p>没有新回应，讨论转向猜测。91今日大乱斗在这类条目上只记录已发生的事实，不补充没有出处的推测。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Focus -->
+  <section class="block" id="focus">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>争议焦点与时间线</h2>
+        <p>同一个话题在不同平台说法不一，91今日大乱斗的用法是把关键节点按顺序摆开，先看顺序，再看谁的说法站得住。</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>为什么需要时间线</h3>
+          <p>乱斗类话题最常见的问题是<strong>先后顺序被剪乱</strong>。一段回放、一张截图，脱离上下文之后很容易被当成“最新进展”传播，实际上它可能是整件事最早的一环。</p>
+          <p>91今日大乱斗的做法是给每条话题单独建一条时间线：原始出处、二次传播、当事方回应、后续补充，各自放在对应位置。读者先看清顺序，再判断谁在改口。</p>
+          <p>需要说明的是，这里记录的是<strong>公开可见的信息</strong>。没有出处的说法、无法核对的私信截图，一律不进入时间线，也不作为条目结论。</p>
+        </div>
+        <div class="panel">
+          <h3>今日一条主线节点</h3>
+          <ul class="timeline">
+            <li><b>起点</b>：直播中的一句回应，原始回放仍可查。</li>
+            <li><b>扩散</b>：片段被剪成短视频，脱离上下文后传播。</li>
+            <li><b>回应</b>：当事方之一发文说明，但未给出新证据。</li>
+            <li><b>分化</b>：评论区形成两种解读，各自引用不同片段。</li>
+            <li><b>当前</b>：双方均未再补充材料，热度缓慢回落。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feed -->
+  <section class="block" id="feed">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今日乱斗榜单</h2>
+        <p>按讨论热度排序，可切换类型筛选。榜单反映的是围观热度，不代表事件本身的真假判断。</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="榜单类型筛选">
+        <button class="chip active" data-filter="all" type="button">全部</button>
+        <button class="chip" data-filter="hot" type="button">对线热点</button>
+        <button class="chip" data-filter="gua" type="button">爆料瓜点</button>
+        <button class="chip" data-filter="talk" type="button">舆论争议</button>
+      </div>
+      <div class="feed" id="feedList">
+        <article class="feed-item" data-type="hot">
+          <span class="rank">01</span>
+          <div><h4>两位主播连麦互呛，旧账被重新翻出</h4><small>对线热点 · 原始回放可查 · 发酵中</small></div>
+          <span class="heat">热度 98</span>
+        </article>
+        <article class="feed-item" data-type="gua">
+          <span class="rank">02</span>
+          <div><h4>工作室抄袭指控，对比图与时间线并排</h4><small>爆料瓜点 · 被指方暂未回应 · 待证实</small></div>
+          <span class="heat">热度 95</span>
+        </article>
+        <article class="feed-item" data-type="talk">
+          <span class="rank">03</span>
+          <div><h4>评论区争论外溢，话题被推上热搜位</h4><small>舆论争议 · 双方各引往期素材 · 分化</small></div>
+          <span class="heat">热度 91</span>
+        </article>
+        <article class="feed-item" data-type="hot">
+          <span class="rank">04</span>
+          <div><h4>前一天说法被自己推翻，时间线出现缺口</h4><small>对线热点 · 两版内容并排保留 · 更新中</small></div>
+          <span class="heat">热度 87</span>
+        </article>
+        <article class="feed-item" data-type="gua">
+          <span class="rank">05</span>
+          <div><h4>本周围观合集：多条小瓜合并为主线</h4><small>爆料瓜点 · 按时间顺序排列 · 多线</small></div>
+          <span class="heat">热度 82</span>
+        </article>
+        <article class="feed-item" data-type="talk">
+          <span class="rank">06</span>
+          <div><h4>话题方选择沉默，讨论热度自行回落</h4><small>舆论争议 · 无新回应 · 冷处理</small></div>
+          <span class="heat">热度 76</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notes -->
+  <section class="block" id="notes">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>围观须知</h2>
+        <p>看乱斗话题，方法比结论更重要。下面三条是91今日大乱斗的固定处理原则。</p>
+      </div>
+      <div class="notes">
+        <div class="note">
+          <h3>先看原始出处</h3>
+          <p>截图、切片、转述都属于二次传播。91今日大乱斗在每条话题下优先标注原始出处位置，能点回原处的才写进时间线。</p>
+        </div>
+        <div class="note">
+          <h3>区分事实与说法</h3>
+          <p>“谁说了什么”是事实，“谁对谁错”是判断。前者照录，后者留给读者。未回应的指控统一标注为待证实。</p>
+        </div>
+        <div class="note">
+          <h3>热度不等于真相</h3>
+          <p>榜单排序看的是讨论量。一条话题排得靠前，只说明围观的人多，不代表其中的说法已被确认。</p>
+        </div>
+      </div>
+
+      <div class="dl-row">
+        <div>
+          <h3>离线保存今日条目</h3>
+          <p>把当日榜单与时间线存成本地文件，方便对照前后几天的说法变化。91今日大乱斗的条目内容以生成时点为准。</p>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="#1a1024" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1c1830"/>
+            <circle cx="24" cy="26" r="9" fill="#ff4d6d"/>
+            <circle cx="41" cy="38" r="9" fill="#ffb703"/>
+            <path d="M32 12l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#ffffff"/>
+          </svg>
+          <span>91今日大乱斗</span>
+        </div>
+        <p style="margin-top:12px;">91今日大乱斗聚合当日热点乱斗话题，按条目梳理时间线与争议焦点，标注待证实内容，帮助围观者先看清再判断。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#hot">今日热点</a>
+        <a href="#focus">争议焦点</a>
+        <a href="#feed">乱斗榜单</a>
+        <a href="#notes">围观须知</a>
+      </div>
+    </div>
+    <p class="copy">内容依据公开可见信息编排，热度与排序反映讨论量，不构成对事件真实性的判断。</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var chips = document.querySelectorAll('.chip');
+    var items = document.querySelectorAll('#feedList .feed-item');
+    chips.forEach(function(chip){
+      chip.addEventListener('click', function(){
+        chips.forEach(function(c){ c.classList.remove('active'); });
+        chip.classList.add('active');
+        var f = chip.getAttribute('data-filter');
+        items.forEach(function(item){
+          var show = (f === 'all') || (item.getAttribute('data-type') === f);
+          item.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
