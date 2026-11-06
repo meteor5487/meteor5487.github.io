@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日黑料大赛官网-黑料大赛热点合集_每日爆料大赛吃瓜看点</title>
+<meta name="description" content="每日黑料大赛官网汇集每日黑料大赛的热点合集与吃瓜看点，按日梳理爆料条目、话题脉络与讨论焦点，方便快速浏览当日黑料大赛内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Cpath d='M18 44 L32 16 L46 44 Z' fill='none' stroke='%23ff4d3d' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='37' r='4' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0d0d10;
+  --panel:#151519;
+  --panel2:#1c1c22;
+  --line:#2a2a32;
+  --txt:#ecebe8;
+  --muted:#a3a1a8;
+  --red:#ff4d3d;
+  --gold:#ffd166;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,13,16,.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;letter-spacing:.5px;white-space:nowrap}
+.brand svg{width:30px;height:30px;flex:none}
+.brand .dot{color:var(--red)}
+nav ul{display:flex;gap:22px;list-style:none;font-size:14px;color:var(--muted)}
+nav ul a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+nav ul a:hover{color:var(--txt);border-color:var(--red)}
+.nav-cta{
+  font-size:13px;padding:8px 16px;border-radius:999px;
+  background:var(--red);color:#fff;font-weight:600;white-space:nowrap;
+  transition:.2s;
+}
+.nav-cta:hover{background:#ff6455}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:6px 10px;font-size:13px}
+
+/* hero */
+.hero{
+  position:relative;
+  padding:64px 0 56px;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(600px 300px at 15% 0%,rgba(255,77,61,.18),transparent 70%),
+    radial-gradient(500px 300px at 90% 30%,rgba(255,209,102,.10),transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:1px;color:var(--gold);
+  border:1px solid rgba(255,209,102,.35);
+  border-radius:999px;padding:5px 14px;margin-bottom:20px;
+  background:rgba(255,209,102,.06);
+}
+.tag i{width:6px;height:6px;border-radius:50%;background:var(--red);display:inline-block}
+h1{
+  font-size:clamp(28px,4.4vw,46px);
+  line-height:1.25;
+  font-weight:800;
+  letter-spacing:.5px;
+  margin-bottom:18px;
+}
+h1 span{color:var(--red)}
+.hero p.lead{color:var(--muted);font-size:15.5px;max-width:36em;margin-bottom:26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:14px;font-weight:600;
+  transition:.2s;
+}
+.btn-main{background:var(--red);color:#fff}
+.btn-main:hover{background:#ff6455;transform:translateY(-1px)}
+.btn-ghost{border:1px solid var(--line);color:var(--txt);background:var(--panel)}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+.hero-card{
+  background:linear-gradient(160deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+}
+.hero-card h2{font-size:13px;letter-spacing:1px;color:var(--muted);font-weight:600;margin-bottom:14px;text-transform:uppercase}
+.hero-card ol{list-style:none;display:flex;flex-direction:column;gap:12px}
+.hero-card li{display:flex;gap:12px;align-items:flex-start;font-size:14px}
+.hero-card li b{
+  font-size:12px;color:var(--red);border:1px solid rgba(255,77,61,.4);
+  border-radius:6px;padding:0 6px;line-height:20px;flex:none;font-weight:700;
+}
+.hero-card li span{color:#d6d4d0}
+.hero-card li small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+
+/* stats strip */
+.strip{border-bottom:1px solid var(--line);background:var(--panel)}
+.strip-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.strip-item{background:var(--panel);padding:22px 16px;text-align:center}
+.strip-item strong{display:block;font-size:24px;color:var(--gold);font-weight:800;letter-spacing:.5px}
+.strip-item span{font-size:13px;color:var(--muted)}
+
+/* sections */
+section{padding:58px 0}
+.sec-head{margin-bottom:30px;max-width:44em}
+.sec-head h2{font-size:clamp(21px,2.6vw,27px);font-weight:800;margin-bottom:10px}
+.sec-head h2 em{color:var(--red);font-style:normal}
+.sec-head p{color:var(--muted);font-size:14.5px}
+
+/* cards */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  transition:.22s;
+  display:flex;flex-direction:column;gap:10px;
+}
+.card:hover{border-color:rgba(255,77,61,.55);transform:translateY(-2px)}
+.card .ico{width:36px;height:36px}
+.card h3{font-size:16px;font-weight:700}
+.card p{font-size:13.5px;color:var(--muted);flex:1}
+.card .meta{font-size:12px;color:var(--gold);letter-spacing:.5px}
+
+/* list section */
+.two-col{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:start}
+.entry{
+  display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);
+}
+.entry:last-child{border-bottom:none}
+.entry .idx{
+  font-size:13px;font-weight:800;color:var(--red);
+  border:1px solid rgba(255,77,61,.35);border-radius:8px;
+  width:38px;height:38px;display:flex;align-items:center;justify-content:center;flex:none;
+  background:rgba(255,77,61,.07);
+}
+.entry h3{font-size:15.5px;margin-bottom:4px}
+.entry p{font-size:13.5px;color:var(--muted)}
+.entry time{font-size:12px;color:#6f6d75;display:block;margin-top:6px}
+
+.side-box{
+  background:var(--panel2);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  margin-bottom:18px;
+}
+.side-box h3{font-size:14px;letter-spacing:.5px;margin-bottom:14px;color:var(--gold)}
+.side-box ul{list-style:none;display:flex;flex-direction:column;gap:11px;font-size:13.5px;color:var(--muted)}
+.side-box li{display:flex;justify-content:space-between;gap:10px}
+.side-box li b{color:var(--txt);font-weight:600}
+.side-note{font-size:12.5px;color:#6f6d75;line-height:1.7}
+
+/* search */
+.search-bar{
+  display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;
+}
+.search-bar input{
+  flex:1;min-width:200px;
+  background:var(--panel);border:1px solid var(--line);
+  color:var(--txt);border-radius:999px;padding:11px 20px;font-size:14px;outline:none;
+}
+.search-bar input:focus{border-color:var(--red)}
+.search-bar button{
+  background:var(--gold);color:#1a1a1a;border:none;border-radius:999px;
+  padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;
+}
+.search-bar button:hover{background:#ffe08a}
+.result-hint{margin-top:14px;font-size:13px;color:var(--muted);min-height:20px}
+
+/* download */
+.dl-panel{
+  display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center;
+  background:linear-gradient(140deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;
+}
+.dl-panel h2{font-size:21px;margin-bottom:10px}
+.dl-panel p{font-size:14px;color:var(--muted);max-width:34em}
+.dl-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--red);color:#fff;font-weight:700;font-size:15px;
+  border-radius:999px;padding:13px 32px;pointer-events:none;
+  opacity:.95;
+}
+.dl-tag{font-size:12px;color:#6f6d75;margin-top:10px}
+
+/* faq */
+.faq-item{border-bottom:1px solid var(--line);padding:18px 0}
+.faq-item h3{font-size:15px;margin-bottom:8px;display:flex;gap:10px}
+.faq-item h3::before{content:"Q";color:var(--red);font-weight:800}
+.faq-item p{font-size:13.5px;color:var(--muted);padding-left:24px}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:var(--panel);padding:40px 0 28px}
+.foot-top{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:28px}
+.foot-brand{max-width:26em}
+.foot-brand .brand{margin-bottom:12px}
+.foot-brand p{font-size:13px;color:var(--muted)}
+.foot-links{display:flex;gap:52px;flex-wrap:wrap}
+.foot-links h4{font-size:13px;color:var(--gold);margin-bottom:12px;letter-spacing:.5px}
+.foot-links ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--muted)}
+.foot-links a:hover{color:var(--txt)}
+.copy{border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:#6f6d75;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .two-col{grid-template-columns:1fr;gap:28px}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .strip-inner{grid-template-columns:1fr 1fr}
+  .dl-panel{grid-template-columns:1fr}
+}
+@media (max-width:680px){
+  nav ul{display:none}
+  .nav{height:60px}
+  .menu-btn{display:block}
+  .nav-cta{padding:7px 13px;font-size:12px}
+  .brand{font-size:14px}
+  .brand svg{width:26px;height:26px}
+  .hero{padding:40px 0 36px}
+  section{padding:42px 0}
+  .grid-3{grid-template-columns:1fr}
+  .strip-item strong{font-size:20px}
+  .entry{gap:12px}
+  .foot-links{gap:32px}
+  .dl-panel{padding:22px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="每日黑料大赛官网">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1c1c22"/>
+        <path d="M18 46 L32 16 L46 46 Z" fill="none" stroke="#ff4d3d" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="32" cy="38" r="4.5" fill="#ffd166"/>
+      </svg>
+      <span>每日黑料大赛官网<span class="dot">.</span></span>
+    </a>
+    <nav aria-label="主导航">
+      <ul>
+        <li><a href="#daily">今日看点</a></li>
+        <li><a href="#topics">话题分区</a></li>
+        <li><a href="#search">站内检索</a></li>
+        <li><a href="#faq">常见疑问</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#daily">查看今日合集</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="tag"><i></i>热点内容合集 · 按日更新</span>
+        <h1>每日黑料大赛官网</h1>
+        <p class="lead">这里把每天围绕“黑料大赛”的爆料条目、话题脉络与讨论焦点汇总到一处，按日期与主题分区陈列，方便直接浏览当日合集、回看前几日的热门条目，再顺着标签找到相关的吃瓜线索。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#daily">进入今日合集 →</a>
+          <a class="btn btn-ghost" href="#topics">浏览话题分区</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="今日热门条目速览">
+        <h2>今日热门速览</h2>
+        <ol>
+          <li><b>01</b><span>话题主线：多条爆料指向同一事件<span><small>讨论集中在时间线与当事方回应</small></span></span></li>
+          <li><b>02</b><span>人物线：旧帖被重新翻出<span><small>较早发布的内容再次进入视野</small></span></span></li>
+          <li><b>03</b><span>截图线：多版本说法并存<span><small>需对照原始出处再判断</small></span></span></li>
+          <li><b>04</b><span>后续线：当事方暂未统一回应<span><small>以公开表述为准</small></span></span></li>
+        </ol>
+      </aside>
+    </div>
+  </div>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <div class="strip-item"><strong>每日</strong><span>合集更新节奏</span></div>
+      <div class="strip-item"><strong>4 类</strong><span>话题分区维度</span></div>
+      <div class="strip-item"><strong>按日</strong><span>条目归档方式</span></div>
+      <div class="strip-item"><strong>1 处</strong><span>集中浏览入口</span></div>
+    </div>
+  </div>
+
+  <!-- DAILY -->
+  <section id="daily">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今日<em>黑料大赛</em>合集：条目按线索归类</h2>
+        <p>每日黑料大赛官网把当天分散出现的爆料整理成条目，每条只保留可核对的部分：发生了什么、出自哪里、当事方是否公开回应。浏览时先看主线，再按序号往下追细节。</p>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <article class="entry">
+            <div class="idx">01</div>
+            <div>
+              <h3>事件主线：同一话题的多条爆料合并呈现</h3>
+              <p>当多条内容指向同一件事，页面会把它们放进同一条目，按时间顺序排列，标注哪些是原始发布、哪些是二次转述，避免把转述当成一手信息。</p>
+              <time>归类方式 · 主线合并</time>
+            </div>
+          </article>
+          <article class="entry">
+            <div class="idx">02</div>
+            <div>
+              <h3>人物线：围绕当事人的公开动态</h3>
+              <p>涉及具体人物的条目，只记录已公开的表述与可查的动态，不替当事方下结论。读者可以顺着人物标签回看此前出现过的相关条目。</p>
+              <time>归类方式 · 人物标签</time>
+            </div>
+          </article>
+          <article class="entry">
+            <div class="idx">03</div>
+            <div>
+              <h3>素材线：截图、录屏与文字稿分开标注</h3>
+              <p>不同形式的素材分开记录来源与出现时间。多个版本并存时并列展示，并提示以原始出处为准，减少单一版本被当作定论的情况。</p>
+              <time>归类方式 · 素材区分</time>
+            </div>
+          </article>
+          <article class="entry">
+            <div class="idx">04</div>
+            <div>
+              <h3>后续线：回应与更新单独归档</h3>
+              <p>当事方回应、删帖、澄清等后续动作会单独成条，并回溯关联到原条目。这样回看时能清楚看到一件事从出现到变化的过程。</p>
+              <time>归类方式 · 后续追踪</time>
+            </div>
+          </article>
+        </div>
+
+        <aside>
+          <div class="side-box">
+            <h3>浏览顺序建议</h3>
+            <ul>
+              <li><span>先看主线条目</span><b>抓重点</b></li>
+              <li><span>再看人物与素材</span><b>补细节</b></li>
+              <li><span>最后看后续回应</span><b>辨变化</b></li>
+            </ul>
+          </div>
+          <div class="side-box">
+            <h3>条目里会出现的信息</h3>
+            <ul>
+              <li><span>出现时间</span><b>有</b></li>
+              <li><span>原始出处</span><b>有</b></li>
+              <li><span>是否已回应</span><b>标注</b></li>
+              <li><span>是否多版本</span><b>标注</b></li>
+            </ul>
+          </div>
+          <p class="side-note">每日黑料大赛官网只做条目陈列与来源标注，不对事件本身作定性判断。读者浏览时请以公开信息与当事方表述为依据。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section id="topics" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>话题<em>分区</em>：按内容类型进入</h2>
+        <p>同一个大赛话题下，内容类型差别很大。分区的作用是把主线、人物、素材和后续拆开，让不同需求的人各取所需。</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="8" width="36" height="32" rx="6" fill="none" stroke="#ff4d3d" stroke-width="2.5"/><path d="M14 18h20M14 25h14M14 32h20" stroke="#ffd166" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <span class="meta">分区一</span>
+          <h3>事件主线合集</h3>
+          <p>把当天讨论最集中、关联条目最多的话题放在前面，按时间线串起前后变化，适合想快速了解“发生了什么”的读者。</p>
+        </div>
+        <div class="card">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="17" r="8" fill="none" stroke="#ff4d3d" stroke-width="2.5"/><path d="M9 40c1.5-8 7.5-12 15-12s13.5 4 15 12" fill="none" stroke="#ffd166" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <span class="meta">分区二</span>
+          <h3>人物动态条目</h3>
+          <p>围绕具体当事人整理公开动态与表态，按人物归档，便于回看同一人物此前出现过的条目与当时的说法。</p>
+        </div>
+        <div class="card">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="10" width="32" height="24" rx="4" fill="none" stroke="#ff4d3d" stroke-width="2.5"/><path d="M8 34l8 6M40 34l-8 6" stroke="#ffd166" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <span class="meta">分区三</span>
+          <h3>素材与截图线</h3>
+          <p>截图、录屏、文字稿分别标注来源与出现时间。同一条目存在多个版本时并列陈列，提示回到原始出处核对。</p>
+        </div>
+        <div class="card">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 38V16l14-6 14 6v22" fill="none" stroke="#ff4d3d" stroke-width="2.5" stroke-linejoin="round"/><path d="M20 38V26h8v12" fill="none" stroke="#ffd166" stroke-width="2.5"/></svg>
+          <span class="meta">分区四</span>
+          <h3>回应与后续</h3>
+          <p>回应、澄清、删帖等动作单独成条并回溯关联原条目，方便看清一件事从出现到变化的过程。</p>
+        </div>
+        <div class="card">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="11" fill="none" stroke="#ff4d3d" stroke-width="2.5"/><path d="M29 29l10 10" stroke="#ffd166" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <span class="meta">分区五</span>
+          <h3>往期条目回看</h3>
+          <p>按日期归档，可以翻到前几天甚至更早的合集，看看某个话题此前是否出现过、当时讨论到什么程度。</p>
+        </div>
+        <div class="card">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 8l4 9 10 1-7.5 7 2 10-8.5-4.5L15.5 35l2-10L10 18l10-1z" fill="none" stroke="#ffd166" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <span class="meta">分区六</span>
+          <h3>讨论焦点速读</h3>
+          <p>汇总当天读者讨论最多的几个点，用短句概括争议所在，帮助判断先看哪一条、哪些还需要等后续信息。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section id="search" style="border-top:1px solid var(--line);background:var(--panel);">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>站内<em>检索</em>：按关键词找条目</h2>
+        <p>如果已经有明确想看的话题或人物，可以直接在下方输入关键词。检索范围是本站已陈列的条目标题与分类标签，输入后会给出匹配数量提示。</p>
+      </div>
+      <div class="search-bar">
+        <input id="kw" type="search" placeholder="输入关键词，如：主线、人物、截图、回应" aria-label="按关键词检索条目">
+        <button id="searchBtn" type="button">检索条目</button>
+      </div>
+      <p class="result-hint" id="hint">共收录 10 条可检索条目，涵盖今日合集与话题分区。</p>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="dl-panel">
+        <div>
+          <h2>下载每日黑料大赛官网条目清单</h2>
+          <p>把当日合集的条目名称、分类标签与出现时间整理成一份清单，便于离线回看或自行比对。清单仅包含条目索引信息，具体内容仍以页面陈列为准。</p>
+        </div>
+        <div>
+          <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" role="button" aria-label="下载条目清单（暂不可用）">
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            下载
+          </a>
+          <p class="dl-tag">清单文件正在准备中，入口保留待启用。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见<em>疑问</em></h2>
+        <p>关于每日黑料大赛官网的内容范围与浏览方式，集中回答几类高频问题。</p>
+      </div>
+      <div class="faq-item">
+        <h3>每日黑料大赛官网的内容是怎么组织的？</h3>
+        <p>按日期归档，再按主线、人物、素材、后续四类拆分条目。同一条目只保留可核对部分，并标注出现时间与原始出处。</p>
+      </div>
+      <div class="faq-item">
+        <h3>条目里的说法是否代表本站立场？</h3>
+        <p>不代表。页面只做条目陈列与来源标注，不对事件本身作定性判断。多版本并存时会并列展示，以原始出处为准。</p>
+      </div>
+      <div class="faq-item">
+        <h3>想看几天前的内容怎么办？</h3>
+        <p>在“往期条目回看”分区按日期翻页即可。较早出现的条目若之后有回应，会在原条目下追加关联的后续条目。</p>
+      </div>
+      <div class="faq-item">
+        <h3>检索能匹配到什么范围？</h3>
+        <p>检索范围是本站已陈列条目的标题与分类标签，不涉及外部站点内容。输入关键词后页面会提示匹配数量，便于继续浏览。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1c1c22"/>
+            <path d="M18 46 L32 16 L46 46 Z" fill="none" stroke="#ff4d3d" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="32" cy="38" r="4.5" fill="#ffd166"/>
+          </svg>
+          <span>每日黑料大赛官网<span class="dot">.</span></span>
+        </a>
+        <p>每日黑料大赛官网，按日汇总黑料大赛相关条目与讨论焦点，提供话题分区、往期回看与站内检索，内容以公开信息与来源标注为主。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>内容</h4>
+          <ul>
+            <li><a href="#daily">今日看点</a></li>
+            <li><a href="#topics">话题分区</a></li>
+            <li><a href="#search">站内检索</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>说明</h4>
+          <ul>
+            <li><a href="#faq">常见疑问</a></li>
+            <li><a href="#download">条目清单</a></li>
+            <li><a href="#top">回到顶部</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>每日黑料大赛官网 · 热点内容合集</span>
+      <span>页面内容仅为条目索引与来源标注，请以公开信息为准。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var kw = document.getElementById('kw');
+  var btn = document.getElementById('searchBtn');
+  var hint = document.getElementById('hint');
+  var index = [
+    {t:'今日黑料大赛合集：事件主线', k:['主线','合集','今日','事件']},
+    {t:'人物动态条目', k:['人物','动态','当事人']},
+    {t:'素材与截图线', k:['素材','截图','录屏','文字稿']},
+    {t:'回应与后续', k:['回应','后续','澄清','删帖']},
+    {t:'往期条目回看', k:['往期','回看','归档','日期']},
+    {t:'讨论焦点速读', k:['焦点','讨论','速读','争议']},
+    {t:'站内检索入口', k:['检索','搜索','关键词']},
+    {t:'下载条目清单', k:['下载','清单','索引']},
+    {t:'常见疑问', k:['疑问','问答','说明']},
+    {t:'话题分区总览', k:['分区','话题','总览','分类']}
+  ];
+  function run(){
+    var q = (kw.value || '').trim();
+    if(!q){
+      hint.textContent = '共收录 10 条可检索条目，涵盖今日合集与话题分区。';
+      return;
+    }
+    var hits = index.filter(function(item){
+      if(item.t.indexOf(q) > -1) return true;
+      return item.k.some(function(k){ return k.indexOf(q) > -1 || q.indexOf(k) > -1; });
+    });
+    if(hits.length){
+      hint.textContent = '匹配到 ' + hits.length + ' 条：' + hits.map(function(h){return h.t;}).join('、');
+    }else{
+      hint.textContent = '暂无匹配条目，可尝试“主线”“人物”“截图”“回应”等关键词。';
+    }
+  }
+  btn.addEventListener('click', run);
+  kw.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); run(); } });
+})();
+</script>
+</body>
+  </html>
