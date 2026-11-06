@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>直播吧nba官网-直播吧NBA官网赛程比分_NBA直播吧官网赛果与球队排名</title>
+<meta name="description" content="直播吧nba官网首页：集中查看NBA赛程、实时比分、赛果回顾与球队排名，了解直播吧NBA官网的资讯入口与观赛路径。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23e8461e'/%3E%3Cpath d='M32 6c9 7 14 16 14 26s-5 19-14 26c-9-7-14-16-14-26S23 13 32 6z' fill='%23fff' opacity='.85'/%3E%3Cpath d='M6 32h52M32 6v52' stroke='%231b1b1b' stroke-width='3'/%3E%3C/svg%3E">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#17181c;
+  --ink-2:#3b3f4a;
+  --muted:#6d7280;
+  --line:#e3e5ea;
+  --bg:#f6f6f4;
+  --card:#ffffff;
+  --brand:#e8461e;
+  --brand-d:#b93212;
+  --court:#c9591f;
+  --deep:#15161a;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1140px,92vw);margin:0 auto}
+
+/* ---------- header ---------- */
+.site-head{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  display:flex;align-items:center;gap:26px;
+  min-height:66px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand-mark{width:38px;height:38px;flex-shrink:0}
+.brand-text{
+  font-size:19px;font-weight:800;letter-spacing:.2px;
+  color:var(--ink);white-space:nowrap;
+}
+.brand-text em{font-style:normal;color:var(--brand)}
+.nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+.nav a{
+  font-size:14.5px;color:var(--ink-2);font-weight:500;
+  padding:4px 0;border-bottom:2px solid transparent;transition:.18s;
+}
+.nav a:hover{color:var(--brand);border-bottom-color:var(--brand)}
+.head-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--brand);color:#fff;font-size:14px;font-weight:600;
+  padding:8px 16px;border-radius:999px;transition:.18s;
+}
+.head-cta:hover{background:var(--brand-d)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(232,70,30,.16),transparent 46%),
+    radial-gradient(circle at 10% 90%,rgba(201,89,31,.12),transparent 50%),
+    linear-gradient(160deg,#15161a 0%,#22242b 58%,#2b211d 100%);
+  color:#fff;
+  padding:58px 0 54px;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:56px 56px;
+  pointer-events:none;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.7),transparent 78%);
+}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1.6px;font-weight:600;
+  color:#ffb59e;text-transform:uppercase;margin-bottom:16px;
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--brand)}
+h1{
+  font-size:clamp(28px,4.2vw,46px);
+  line-height:1.22;font-weight:800;letter-spacing:.5px;
+  margin-bottom:18px;
+}
+h1 span{color:#ff8f6d}
+.hero-lead{
+  font-size:15.5px;color:#c9ccd6;max-width:48ch;margin-bottom:26px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--brand);color:#fff;font-weight:700;font-size:15px;
+  padding:12px 24px;border-radius:999px;transition:.18s;
+}
+.btn-primary:hover{background:var(--brand-d);transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(255,255,255,.3);color:#eef0f4;font-size:15px;font-weight:500;
+  padding:11px 22px;border-radius:999px;transition:.18s;
+}
+.btn-ghost:hover{border-color:#ff8f6d;color:#ffb59e}
+.btn-dl{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;color:#17181c;font-weight:700;font-size:15px;
+  padding:12px 24px;border-radius:999px;
+  pointer-events:none;opacity:.92;
+}
+.hero-note{margin-top:18px;font-size:12.5px;color:#8d919d}
+
+/* scoreboard card */
+.board{
+  background:linear-gradient(180deg,#20222a,#17181d);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius);
+  padding:18px 18px 14px;
+  box-shadow:0 22px 50px rgba(0,0,0,.42);
+}
+.board-head{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:#9aa0ad;letter-spacing:1px;font-weight:600;
+  padding-bottom:10px;border-bottom:1px dashed rgba(255,255,255,.12);
+}
+.board-head b{color:#ff8f6d;letter-spacing:.5px}
+.game{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.game:last-child{border-bottom:none}
+.team{flex:1;font-size:13.5px;color:#e6e8ee;font-weight:600}
+.score{font-size:17px;font-weight:800;color:#fff;letter-spacing:1px;font-variant-numeric:tabular-nums}
+.score.win{color:#ff8f6d}
+.status{
+  font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;
+  background:rgba(232,70,30,.18);color:#ff9d7f;letter-spacing:.5px;
+}
+.status.done{background:rgba(255,255,255,.09);color:#a4a9b6}
+
+/* ---------- sections ---------- */
+section{padding:56px 0}
+.sec-head{margin-bottom:30px;max-width:62ch}
+.sec-tag{
+  font-size:12.5px;font-weight:700;letter-spacing:2px;color:var(--brand);
+  text-transform:uppercase;margin-bottom:8px;
+}
+h2{font-size:clamp(21px,2.6vw,27px);font-weight:800;line-height:1.35;letter-spacing:.3px}
+.sec-desc{margin-top:10px;color:var(--muted);font-size:14.5px}
+
+/* quick entries */
+.entries{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.entry{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;transition:.2s;display:block;
+}
+.entry:hover{border-color:#f0b6a5;box-shadow:0 10px 26px rgba(232,70,30,.1);transform:translateY(-2px)}
+.entry-ico{width:34px;height:34px;margin-bottom:14px}
+.entry h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.entry p{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+/* schedule */
+.sched-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.sched-bar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:14px 18px;border-bottom:1px solid var(--line);background:#fbfbfa;
+}
+.chip{
+  font-size:13px;font-weight:600;color:var(--ink-2);
+  border:1px solid var(--line);background:#fff;
+  padding:6px 14px;border-radius:999px;cursor:pointer;transition:.16s;
+}
+.chip:hover{border-color:#f0b6a5;color:var(--brand)}
+.chip.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.sched-bar .spacer{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.rows{padding:4px 18px 10px}
+.row{
+  display:grid;grid-template-columns:96px 1fr auto;
+  gap:16px;align-items:center;
+  padding:15px 0;border-bottom:1px solid #f0f1f3;
+}
+.row:last-child{border-bottom:none}
+.row-time{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.row-time b{display:block;color:var(--ink);font-size:14px;font-weight:700}
+.row-match{font-size:15px;font-weight:600}
+.row-match small{display:block;font-size:12.5px;color:var(--muted);font-weight:400;margin-top:2px}
+.row-tag{
+  font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px;
+  background:#fdf0eb;color:var(--brand-d);white-space:nowrap;
+}
+.row-tag.replay{background:#f1f3f7;color:#5a6070}
+
+/* rankings */
+.rank-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.rank-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.rank-card h3{font-size:15.5px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.rank-card h3::before{content:"";width:4px;height:16px;border-radius:2px;background:var(--brand)}
+.rank-list{list-style:none;display:flex;flex-direction:column;gap:11px}
+.rank-list li{display:flex;align-items:center;gap:12px;font-size:14px}
+.rank-no{
+  width:22px;height:22px;flex-shrink:0;border-radius:6px;
+  display:grid;place-items:center;font-size:12px;font-weight:800;
+  background:#f1f3f7;color:#5a6070;
+}
+.rank-list li:nth-child(1) .rank-no{background:var(--brand);color:#fff}
+.rank-list li:nth-child(2) .rank-no{background:#ffb59e;color:#7a2a10}
+.rank-list li:nth-child(3) .rank-no{background:#fde3d9;color:#a13c1c}
+.rank-name{flex:1;font-weight:600}
+.rank-val{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* content blocks */
+.two-col{display:grid;grid-template-columns:1.45fr 1fr;gap:30px;align-items:start}
+.prose p{font-size:15px;color:var(--ink-2);margin-bottom:16px;line-height:1.9}
+.prose p strong{color:var(--ink);font-weight:700}
+.prose h3{font-size:17.5px;font-weight:700;margin:6px 0 12px}
+.aside-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;margin-bottom:16px;
+}
+.aside-card h4{font-size:14.5px;font-weight:700;margin-bottom:12px;color:var(--ink)}
+.aside-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.aside-card li{font-size:13.5px;color:var(--ink-2);padding-left:16px;position:relative;line-height:1.7}
+.aside-card li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--brand);opacity:.6}
+
+/* faq */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.qa{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+.qa h3{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--ink)}
+.qa p{font-size:14px;color:var(--muted);line-height:1.8}
+
+/* footer */
+.site-foot{background:var(--deep);color:#9aa0ad;padding:42px 0 30px;margin-top:10px}
+.foot-top{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand{display:flex;align-items:center;gap:10px}
+.foot-brand .brand-text{color:#fff;font-size:17px}
+.foot-brand .brand-mark{width:32px;height:32px}
+.foot-desc{font-size:13px;color:#7f8492;margin-top:10px;max-width:44ch;line-height:1.75}
+.foot-links{display:flex;gap:52px;flex-wrap:wrap}
+.foot-col h5{font-size:13px;color:#e6e8ee;font-weight:700;margin-bottom:12px;letter-spacing:.5px}
+.foot-col a{display:block;font-size:13px;color:#8d919d;margin-bottom:8px;transition:.16s}
+.foot-col a:hover{color:#ff8f6d}
+.copy{padding-top:20px;font-size:12.5px;color:#6d7280;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .entries{grid-template-columns:1fr 1fr}
+  .rank-grid,.two-col,.faq{grid-template-columns:1fr}
+  .nav{gap:16px}
+}
+@media (max-width:620px){
+  .head-inner{min-height:auto;padding:12px 0;gap:12px}
+  .brand-text{font-size:16.5px}
+  .nav{width:100%;margin-left:0;gap:14px;font-size:13.5px;order:3;overflow-x:auto;padding-bottom:2px}
+  .head-cta{margin-left:auto;padding:7px 13px;font-size:13px}
+  .hero{padding:40px 0}
+  .entries{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr auto;gap:6px 12px}
+  .row-time{grid-column:1/-1;display:flex;gap:8px;align-items:baseline}
+  .row-time b{display:inline}
+  .sched-bar .spacer{display:none}
+  section{padding:42px 0}
+  .foot-links{gap:34px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="直播吧nba官网首页">
+      <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#e8461e"/>
+        <path d="M32 6c9 7 14 16 14 26s-5 19-14 26c-9-7-14-16-14-26S23 13 32 6z" fill="#fff" opacity=".85"/>
+        <path d="M6 32h52M32 6v52" stroke="#17181c" stroke-width="3"/>
+      </svg>
+      <span class="brand-text">直播吧nba官网</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#schedule">赛程比分</a>
+      <a href="#rankings">球队排名</a>
+      <a href="#guide">观赛路径</a>
+      <a href="#faq">常见问答</a>
+    </nav>
+    <a class="head-cta" href="#schedule">查看今日赛程</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">NBA Schedule &amp; Scores</div>
+        <h1 id="hero-title">直播吧nba官网</h1>
+        <p class="hero-lead">把当日 NBA 赛程、实时比分与赛后赛果放在同一处查看。直播吧nba官网围绕比赛日组织信息，先看今天有哪些对决，再进入具体场次了解进程与结果。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#schedule">进入赛程比分
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn-ghost" href="#rankings">查看球队排名</a>
+          <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+            下载
+          </a>
+        </div>
+        <p class="hero-note">赛程与比分随比赛进程更新，页面内容以比赛日为单位组织。</p>
+      </div>
+
+      <aside class="board" aria-label="比分示例卡片">
+        <div class="board-head"><span>比赛日速览</span><b>LIVE / 终场</b></div>
+        <div class="game">
+          <span class="team">湖人</span>
+          <span class="score win">108</span>
+          <span class="status done">终场</span>
+        </div>
+        <div class="game">
+          <span class="team">凯尔特人</span>
+          <span class="score">104</span>
+          <span class="status done">终场</span>
+        </div>
+        <div class="game">
+          <span class="team">勇士</span>
+          <span class="score">89</span>
+          <span class="status">进行中</span>
+        </div>
+        <div class="game">
+          <span class="team">掘金</span>
+          <span class="score">85</span>
+          <span class="status">进行中</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ENTRIES -->
+  <section aria-labelledby="entry-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">主要入口</div>
+        <h2 id="entry-title">从四个方向进入 NBA 比赛信息</h2>
+        <p class="sec-desc">直播吧nba官网把访问者最常用的四类需求前置：看今晚打什么、看正在打什么、看已经打完什么、看排名怎么排。</p>
+      </div>
+      <div class="entries">
+        <a class="entry" href="#schedule">
+          <svg class="entry-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect x="4" y="7" width="32" height="28" rx="5" stroke="#e8461e" stroke-width="2.4"/>
+            <path d="M4 15h32M13 4v6M27 4v6" stroke="#e8461e" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="14" cy="23" r="2" fill="#e8461e"/><circle cx="21" cy="23" r="2" fill="#e8461e"/><circle cx="28" cy="23" r="2" fill="#e8461e"/>
+          </svg>
+          <h3>当日赛程</h3>
+          <p>按日期列出对阵与开赛时间，适合提前安排观看。</p>
+        </a>
+        <a class="entry" href="#schedule">
+          <svg class="entry-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="16" stroke="#e8461e" stroke-width="2.4"/>
+            <path d="M20 4c6 5 9 10 9 16s-3 11-9 16c-6-5-9-10-9-16S14 9 20 4zM4 20h32" stroke="#e8461e" stroke-width="2.2"/>
+          </svg>
+          <h3>实时比分</h3>
+          <p>正在进行中的场次显示当前比分与比赛状态，便于跟进节奏。</p>
+        </a>
+        <a class="entry" href="#schedule">
+          <svg class="entry-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect x="5" y="8" width="30" height="24" rx="4" stroke="#e8461e" stroke-width="2.4"/>
+            <path d="M17 15l10 5-10 5V15z" fill="#e8461e"/>
+          </svg>
+          <h3>赛果回顾</h3>
+          <p>已结束场次给出最终比分，方便回看关键对决的结果。</p>
+        </a>
+        <a class="entry" href="#rankings">
+          <svg class="entry-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M9 32V20M20 32V10M31 32V25" stroke="#e8461e" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M5 34h30" stroke="#e8461e" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <h3>球队排名</h3>
+          <p>东西部战绩序列，帮助判断近期走势与对阵强弱。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" aria-labelledby="sched-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">赛程 · 比分</div>
+        <h2 id="sched-title">今天与近期的 NBA 对阵安排</h2>
+        <p class="sec-desc">以下为比赛日信息区的结构示例，按时间顺序呈现对阵、场地与状态，进入具体场次可查看更完整的进程记录。</p>
+      </div>
+
+      <div class="sched-wrap">
+        <div class="sched-bar" role="group" aria-label="赛程筛选">
+          <button class="chip active" type="button">全部</button>
+          <button class="chip" type="button">进行中</button>
+          <button class="chip" type="button">已结束</button>
+          <button class="chip" type="button">未开始</button>
+          <span class="spacer">筛选仅作用于本页赛程区展示</span>
+        </div>
+        <div class="rows">
+          <div class="row">
+            <div class="row-time"><b>08:30</b>未开始</div>
+            <div class="row-match">雄鹿 vs 尼克斯<small>常规赛 · 主队主场</small></div>
+            <span class="row-tag">待开赛</span>
+          </div>
+          <div class="row">
+            <div class="row-time"><b>09:00</b>进行中</div>
+            <div class="row-match">勇士 vs 掘金<small>常规赛 · 第三节</small></div>
+            <span class="row-tag">直播中</span>
+          </div>
+          <div class="row">
+            <div class="row-time"><b>10:30</b>未开始</div>
+            <div class="row-match">快船 vs 独行侠<small>常规赛 · 主队主场</small></div>
+            <span class="row-tag">待开赛</span>
+          </div>
+          <div class="row">
+            <div class="row-time"><b>昨日</b>已结束</div>
+            <div class="row-match">湖人 108 : 104 凯尔特人<small>常规赛 · 终场</small></div>
+            <span class="row-tag replay">赛果</span>
+          </div>
+          <div class="row">
+            <div class="row-time"><b>昨日</b>已结束</div>
+            <div class="row-match">太阳 97 : 112 雷霆<small>常规赛 · 终场</small></div>
+            <span class="row-tag replay">赛果</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANKINGS -->
+  <section id="rankings" aria-labelledby="rank-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">排名</div>
+        <h2 id="rank-title">东西部战绩序列</h2>
+        <p class="sec-desc">排名会随每一场比赛结果变化。直播吧nba官网的排名区用于对照球队战绩，配合赛程区判断近期赛程强度。</p>
+      </div>
+      <div class="rank-grid">
+        <div class="rank-card">
+          <h3>东部</h3>
+          <ol class="rank-list">
+            <li><span class="rank-no">1</span><span class="rank-name">凯尔特人</span><span class="rank-val">战绩领先</span></li>
+            <li><span class="rank-no">2</span><span class="rank-name">雄鹿</span><span class="rank-val">紧随其后</span></li>
+            <li><span class="rank-no">3</span><span class="rank-name">尼克斯</span><span class="rank-val">稳定前列</span></li>
+            <li><span class="rank-no">4</span><span class="rank-name">骑士</span><span class="rank-val">竞争席位</span></li>
+            <li><span class="rank-no">5</span><span class="rank-name">步行者</span><span class="rank-val">追赶中</span></li>
+          </ol>
+        </div>
+        <div class="rank-card">
+          <h3>西部</h3>
+          <ol class="rank-list">
+            <li><span class="rank-no">1</span><span class="rank-name">掘金</span><span class="rank-val">战绩领先</span></li>
+            <li><span class="rank-no">2</span><span class="rank-name">雷霆</span><span class="rank-val">紧随其后</span></li>
+            <li><span class="rank-no">3</span><span class="rank-name">森林狼</span><span class="rank-val">稳定前列</span></li>
+            <li><span class="rank-no">4</span><span class="rank-name">快船</span><span class="rank-val">竞争席位</span></li>
+            <li><span class="rank-no">5</span><span class="rank-name">独行侠</span><span class="rank-val">追赶中</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE + ASIDE -->
+  <section id="guide" aria-labelledby="guide-title">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="prose">
+          <div class="sec-tag">观赛路径</div>
+          <h2 id="guide-title">怎样用直播吧nba官网安排一次观看</h2>
+          <p style="margin-top:14px">访问者的典型需求很直接：今天有哪些比赛、几点开始、现在打到哪、最后谁赢了。直播吧nba官网的首页结构就是围绕这条线索展开的，而不是把大量零散内容堆在一起。</p>
+          <h3>第一步：确认比赛日</h3>
+          <p>先看赛程区的日期与时间列。NBA 比赛多集中在北京时间上午，因此时间列同时标注开赛时刻与状态标签，避免把已结束场次误当成待开赛。选择自己关注的球队，再记下对应开赛时间即可。</p>
+          <h3>第二步：跟进进行中的场次</h3>
+          <p>比赛开始后，比分与节次状态会变化。直播吧nba官网把正在进行的场次单独标注，方便在多个对阵之间快速切换。如果你只想了解结果，可以直接跳到已结束的场次查看最终比分。</p>
+          <h3>第三步：用排名理解赛果</h3>
+          <p>单场比分只是结果，排名给出位置。同一场比赛对两队排名的影响方向不同，这也是排名区与赛程区分开呈现的原因：前者看长期走势，后者看具体场次。<strong>直播吧nba官网</strong>把两者并列，读者可以在看完一场比赛后立刻对照战绩变化。</p>
+          <h3>第四步：回看与复盘</h3>
+          <p>已结束的场次保留最终比分与状态标记，适合在赛后集中浏览。把当日多场比赛放在同一列表里，能更直观看出各队的得失分情况与比赛节奏差异。</p>
+        </div>
+        <aside>
+          <div class="aside-card">
+            <h4>观看前的准备</h4>
+            <ul>
+              <li>确认所在时区，NBA 赛程常以北京时间标注。</li>
+              <li>提前查看对阵列表，挑选一到两场重点场次。</li>
+              <li>关注球队近期战绩，判断比赛悬念大小。</li>
+              <li>赛后回看比分与排名变化，形成完整印象。</li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <h4>页面信息组织原则</h4>
+            <ul>
+              <li>赛程按时间排序，状态标签区分进行中与已结束。</li>
+              <li>比分只呈现结果，不替代完整的技术统计。</li>
+              <li>排名随比赛结果变动，以最新战绩为准。</li>
+              <li>移动端优先展示比赛列表与开赛时间。</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">常见问答</div>
+        <h2 id="faq-title">关于直播吧nba官网的常见疑问</h2>
+        <p class="sec-desc">围绕赛程、比分与排名三类信息，整理访问者最常提出的问题。</p>
+      </div>
+      <div class="faq">
+        <div class="qa">
+          <h3>赛程时间是北京时间吗？</h3>
+          <p>NBA 比赛通常以北京时间标注开赛时刻。跨时区观看时，建议先核对时间列，再安排观看时段。</p>
+        </div>
+        <div class="qa">
+          <h3>比分多久更新一次？</h3>
+          <p>进行中的场次比分会随比赛进程变化。页面以比赛状态标记区分进行中与终场，终场后比分固定为最终结果。</p>
+        </div>
+        <div class="qa">
+          <h3>排名依据什么排列？</h3>
+          <p>排名按球队战绩序列呈现，东西部分开。每场比赛结束后，相关球队的位置可能发生变化。</p>
+        </div>
+        <div class="qa">
+          <h3>能只看某支球队吗？</h3>
+          <p>赛程区按时间列出当日对阵，可先定位关注球队所在场次，再查看该场比分与状态。直播吧nba官网的列表结构便于逐场浏览。</p>
+        </div>
+        <div class="qa">
+          <h3>赛果和比分有什么区别？</h3>
+          <p>比分是单场得分结果，赛果区强调比赛已结束的状态。两者结合能快速判断一场比赛是否已经打完。</p>
+        </div>
+        <div class="qa">
+          <h3>下载入口何时可用？</h3>
+          <p>当前页面中的下载按钮为预留入口，暂未开放，待后续提供可用地址后即可使用。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="#e8461e"/>
+            <path d="M32 6c9 7 14 16 14 26s-5 19-14 26c-9-7-14-16-14-26S23 13 32 6z" fill="#fff" opacity=".85"/>
+            <path d="M6 32h52M32 6v52" stroke="#17181c" stroke-width="3"/>
+          </svg>
+          <span class="brand-text">直播吧nba官网</span>
+        </div>
+        <p class="foot-desc">以比赛日为单位组织 NBA 赛程、比分与球队排名信息，帮助访问者快速找到关注场次。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>内容</h5>
+          <a href="#schedule">赛程比分</a>
+          <a href="#rankings">球队排名</a>
+          <a href="#guide">观赛路径</a>
+        </div>
+        <div class="foot-col">
+          <h5>帮助</h5>
+          <a href="#faq">常见问答</a>
+          <a href="#top">返回顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>直播吧nba官网 · 赛程与比分信息以比赛日展示</span>
+      <span>页面内容随比赛进程更新</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.sched-bar .chip');
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      chips.forEach(function(x){x.classList.remove('active')});
+      c.classList.add('active');
+    });
+  });
+})();
+</script>
+</body>
+                </html>
