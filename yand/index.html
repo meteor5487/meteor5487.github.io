@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yandex网页版入口-网页版登录地址_免安装在线使用</title>
+<meta name="description" content="yandex网页版入口说明：直接在浏览器打开即可使用的网页版登录地址，免安装客户端，支持搜索、邮箱与账号登录，附常见访问问题与使用建议。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e0322a'/%3E%3Cpath d='M22 14h14c8 0 13 5 13 12 0 5-3 9-7 11l9 13h-9l-8-12h-4v12h-8V14zm8 7v10h6c3 0 5-2 5-5s-2-5-5-5h-6z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --red:#e0322a;
+  --red-dark:#b7231d;
+  --ink:#1b1d21;
+  --ink-soft:#4a4f57;
+  --line:#e6e3de;
+  --bg:#faf8f5;
+  --card:#ffffff;
+  --accent:#ffd84d;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* 页头 */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,248,245,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;min-height:66px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:.2px}
+.brand .mark{width:32px;height:32px;flex:0 0 32px}
+.brand span{white-space:nowrap}
+nav.main{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+nav.main a{
+  font-size:14.5px;color:var(--ink-soft);padding:7px 11px;border-radius:9px;
+  transition:.18s;
+}
+nav.main a:hover{background:#f0ebe4;color:var(--ink)}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:14.5px;font-weight:600;
+  padding:9px 18px;border-radius:999px;
+  background:var(--red);color:#fff;
+  transition:.18s;border:1px solid transparent;
+}
+.btn:hover{background:var(--red-dark)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:#d8d2c9}
+.btn.ghost:hover{background:#f0ebe4}
+.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;pointer-events:none}
+
+/* 首屏 */
+.hero{
+  padding:52px 0 44px;
+  border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;color:var(--red-dark);
+  background:#fdeceb;border:1px solid #f6d3d0;
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(28px,4vw,42px);
+  line-height:1.28;letter-spacing:-.5px;font-weight:800;
+  margin-bottom:16px;
+}
+h1 em{font-style:normal;color:var(--red)}
+.lede{font-size:16.5px;color:var(--ink-soft);max-width:34em;margin-bottom:24px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero-note{font-size:13px;color:#8a857d;margin-top:14px}
+
+/* 首屏插画 */
+.hero-art{
+  background:var(--card);border:1px solid var(--line);border-radius:22px;
+  padding:22px;box-shadow:0 18px 40px -26px rgba(27,29,33,.35);
+}
+.hero-art .bar{display:flex;gap:6px;margin-bottom:14px}
+.hero-art .bar i{width:9px;height:9px;border-radius:50%;background:#e6e3de;display:block}
+.hero-art .bar i:first-child{background:var(--red)}
+.search-mock{
+  display:flex;align-items:center;gap:10px;
+  border:1.5px solid var(--line);border-radius:999px;
+  padding:10px 16px;background:#fdfcfb;
+}
+.search-mock svg{flex:0 0 18px}
+.search-mock span{color:#9a948b;font-size:14px}
+.mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.mini-grid div{
+  aspect-ratio:1;border-radius:11px;background:#f4f0ea;
+  display:flex;align-items:center;justify-content:center;
+}
+.mini-grid svg{width:22px;height:22px;opacity:.55}
+
+/* 通用区块 */
+section{padding:52px 0}
+.sec-head{margin-bottom:28px;max-width:42em}
+.sec-head .tag{
+  font-size:12.5px;font-weight:700;letter-spacing:1px;color:var(--red);
+  text-transform:uppercase;display:block;margin-bottom:8px;
+}
+h2{font-size:clamp(21px,2.6vw,27px);font-weight:800;letter-spacing:-.3px;line-height:1.35;margin-bottom:10px}
+.sec-head p{color:var(--ink-soft);font-size:15.5px}
+
+/* 入口卡片 */
+.entries{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.entry{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;display:flex;flex-direction:column;gap:10px;
+  transition:.2s;
+}
+.entry:hover{transform:translateY(-3px);box-shadow:0 20px 34px -26px rgba(27,29,33,.4);border-color:#d9d2c9}
+.entry .ico{
+  width:42px;height:42px;border-radius:11px;background:#fdeceb;
+  display:flex;align-items:center;justify-content:center;margin-bottom:4px;
+}
+.entry .ico svg{width:21px;height:21px}
+.entry h3{font-size:16.5px;font-weight:700}
+.entry p{font-size:14.5px;color:var(--ink-soft);line-height:1.7;flex:1}
+.entry .go{font-size:14px;font-weight:600;color:var(--red);display:inline-flex;align-items:center;gap:5px}
+
+/* 步骤 */
+.steps-wrap{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;counter-reset:s}
+.step{position:relative;padding-top:6px}
+.step .num{
+  width:34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px;margin-bottom:14px;
+}
+.step h3{font-size:16.5px;margin-bottom:7px;font-weight:700}
+.step p{font-size:14.5px;color:var(--ink-soft);line-height:1.75}
+
+/* 双栏正文 */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
+.prose p{font-size:15.5px;color:#3c4046;margin-bottom:15px;line-height:1.85}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--ink);font-weight:700}
+.facts{display:grid;gap:12px}
+.fact{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;display:flex;gap:14px;align-items:flex-start;
+}
+.fact .k{
+  font-size:13px;font-weight:700;color:var(--red-dark);
+  background:#fdeceb;border-radius:7px;padding:3px 9px;white-space:nowrap;
+}
+.fact p{font-size:14.5px;color:var(--ink-soft);line-height:1.7}
+
+/* 问答 */
+.faq{border-top:1px solid var(--line)}
+.faq-list{display:grid;gap:12px;max-width:56em}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:0;overflow:hidden;
+}
+details[open]{border-color:#d9d2c9}
+summary{
+  cursor:pointer;list-style:none;padding:17px 20px;
+  font-weight:600;font-size:15.5px;display:flex;justify-content:space-between;gap:16px;
+  align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";font-weight:400;font-size:20px;color:var(--red);line-height:1;flex:0 0 auto;
+}
+details[open] summary::after{content:"–"}
+details .ans{padding:0 20px 18px;font-size:14.8px;color:var(--ink-soft);line-height:1.8;max-width:46em}
+
+/* 提示条 */
+.notice{
+  margin-top:34px;background:#fff9e6;border:1px solid #f3e3ae;border-radius:var(--radius);
+  padding:16px 20px;font-size:14.5px;color:#6b5a20;display:flex;gap:12px;align-items:flex-start;
+}
+.notice svg{flex:0 0 18px;margin-top:3px}
+
+/* 页尾 */
+footer.site{background:#1b1d21;color:#b9bcc2;padding:44px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:32px}
+footer.site .brand{color:#fff;font-size:16px;margin-bottom:12px}
+footer.site p{font-size:14px;line-height:1.8;color:#9a9ea6;max-width:28em}
+footer.site h4{color:#fff;font-size:14px;margin-bottom:12px;font-weight:700;letter-spacing:.3px}
+footer.site ul{list-style:none;display:grid;gap:8px}
+footer.site ul a{font-size:14px;color:#9a9ea6;transition:.18s}
+footer.site ul a:hover{color:#fff}
+.foot-bottom{
+  border-top:1px solid #2e3138;padding-top:20px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:13px;color:#787c84;
+}
+
+/* 响应式 */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-art{order:-1}
+  .entries{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr;gap:22px}
+  .split{grid-template-columns:1fr;gap:28px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  body{font-size:15.5px}
+  .nav-inner{min-height:60px;flex-wrap:wrap;padding:10px 0}
+  nav.main{order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
+  nav.main a{white-space:nowrap;font-size:14px}
+  .hero{padding:34px 0 34px}
+  .entries{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:26px}
+  section{padding:40px 0}
+  .hero-actions .btn{flex:1;justify-content:center}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="yandex网页版入口 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#e0322a"/>
+        <path d="M22 14h14c8 0 13 5 13 12 0 5-3 9-7 11l9 13h-9l-8-12h-4v12h-8V14zm8 7v10h6c3 0 5-2 5-5s-2-5-5-5h-6z" fill="#fff"/>
+      </svg>
+      <span>yandex网页版入口</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#entries">入口分类</a>
+      <a href="#steps">访问步骤</a>
+      <a href="#howto">网页版说明</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="btn" href="#entries">打开入口</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg>
+          浏览器直达 · 免安装
+        </span>
+        <h1>yandex网页版入口</h1>
+        <p class="lede">yandex网页版入口指的是在浏览器中直接访问的网页端地址，无需下载客户端即可完成搜索、登录邮箱与账号管理。本页把常用入口、访问步骤和常见问题集中在一处，方便随时打开。</p>
+        <div class="hero-actions">
+          <a class="btn" href="#entries">查看网页版入口</a>
+          <a class="btn ghost" href="#steps">了解访问步骤</a>
+        </div>
+        <p class="hero-note">网络环境不同，打开速度可能有差异；建议使用最新版浏览器访问。</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="search-mock">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9a948b" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <span>在网页版中搜索…</span>
+        </div>
+        <div class="mini-grid">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="#1b1d21" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="#1b1d21" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="#1b1d21" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="#1b1d21" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 入口分类 -->
+  <section id="entries">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">入口分类</span>
+        <h2>按用途选择的网页版入口</h2>
+        <p>同一个站点面向不同使用场景，入口位置并不相同。先想清楚要做什么，再决定从哪个页面进入，比盲目搜索更快。</p>
+      </div>
+
+      <div class="entries">
+        <article class="entry">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e0322a" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          </div>
+          <h3>搜索首页</h3>
+          <p>最直接的网页版入口。打开后即为搜索框，适合快速查资料、找网页，无需账号也可使用。</p>
+          <a class="go" href="#steps">进入方式 →</a>
+        </article>
+
+        <article class="entry">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e0322a" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </div>
+          <h3>邮箱登录页</h3>
+          <p>需要用邮箱收发邮件时，从邮箱登录页进入。登录前请确认地址栏域名与页面标识一致。</p>
+          <a class="go" href="#faq">核对要点 →</a>
+        </article>
+
+        <article class="entry">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e0322a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          </div>
+          <h3>账号中心</h3>
+          <p>修改密码、查看登录设备、设置二次验证，都在账号中心完成，属于登录后的管理入口。</p>
+          <a class="go" href="#howto">使用说明 →</a>
+        </article>
+      </div>
+
+      <div class="notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#b08a12" stroke-width="2" stroke-linecap="round"><path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/></svg>
+        <span>网页版入口只在浏览器地址栏输入官方域名最稳妥。遇到要求填写密码的陌生跳转页，请先退出并核对域名，不要直接提交账号信息。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 访问步骤 -->
+  <div class="steps-wrap">
+    <section id="steps">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="tag">访问步骤</span>
+          <h2>三步打开 yandex网页版入口</h2>
+          <p>整个过程不需要安装任何程序，手机和电脑的操作逻辑一致，区别只在键盘与触屏。</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <h3>打开浏览器</h3>
+            <p>使用系统自带浏览器或主流浏览器均可。建议保持浏览器为较新版本，避免页面元素加载不全。</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h3>输入官方域名</h3>
+            <p>在地址栏手动输入域名后回车，不要从来源不明的短链跳转，这是确认 yandex网页版入口 真实性的关键一步。</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h3>选择所需页面</h3>
+            <p>搜索直接输入关键词即可；邮箱与账号相关操作先登录，再进入对应功能页。完成后可直接关闭标签页。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 网页版说明 -->
+  <section id="howto">
+    <div class="wrap split">
+      <div class="prose">
+        <div class="sec-head">
+          <span class="tag">网页版说明</span>
+          <h2>网页版与客户端有什么不同</h2>
+        </div>
+        <p>网页版的最大特点是<strong>免安装、跨设备</strong>。同一账号在电脑浏览器登录后，换到手机浏览器重新登录即可继续使用，不必为每台设备单独下载程序。对于临时查资料、借用他人设备的情况，yandex网页版入口显然更省事。</p>
+        <p>代价是部分依赖本地能力的功能不会出现在网页端，例如系统级通知、离线缓存等。如果你只是搜索、收发邮件、管理账号，网页版已经足够；若长期高频使用，再考虑安装客户端。</p>
+        <p>另外，网页版的界面会随浏览器窗口大小自适应。手机上建议横竖屏都试一次，找到阅读更舒服的排版。登录状态通常保存在浏览器中，公用电脑使用后记得主动退出账号。</p>
+      </div>
+
+      <div class="facts">
+        <div class="fact">
+          <span class="k">免安装</span>
+          <p>打开浏览器输入域名即可使用，不占用本地存储空间，适合临时访问。</p>
+        </div>
+        <div class="fact">
+          <span class="k">跨设备</span>
+          <p>账号数据与网页端同步，电脑与手机之间切换只需重新登录。</p>
+        </div>
+        <div class="fact">
+          <span class="k">按需登录</span>
+          <p>纯搜索无需账号；邮箱、账号设置等功能需要先完成登录验证。</p>
+        </div>
+        <div class="fact">
+          <span class="k">注意退出</span>
+          <p>在公用设备上使用后应主动退出登录，避免账号状态被他人继续使用。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">常见问题</span>
+        <h2>关于 yandex网页版入口 的常见疑问</h2>
+        <p>以下问题来自实际访问中最常遇到的情况，回答只陈述可确认的范围，不涉及具体账号状态。</p>
+      </div>
+
+      <div class="faq-list">
+        <details open>
+          <summary>网页版需要下载安装吗？</summary>
+          <div class="ans">不需要。yandex网页版入口的本质是一个网页地址，在浏览器地址栏输入并通过回车访问即可，全程不涉及安装包。若页面提示下载程序，请先确认是否为你主动发起的操作。</div>
+        </details>
+        <details>
+          <summary>不登录账号能用搜索吗？</summary>
+          <div class="ans">可以。搜索首页属于公开页面，打开后直接输入关键词即可获得结果。登录的作用主要体现在邮箱、账号设置与个性化偏好上，与基础搜索是分开的。</div>
+        </details>
+        <details>
+          <summary>页面打不开或加载很慢怎么办？</summary>
+          <div class="ans">先检查本地网络是否正常，再尝试更换浏览器或清除缓存后重试。不同网络环境下的访问速度存在差异，这属于正常现象。如果只有某一个页面异常，可稍后再试。</div>
+        </details>
+        <details>
+          <summary>如何判断自己打开的是不是官方页面？</summary>
+          <div class="ans">重点看地址栏域名是否与你预期的一致，以及页面整体标识、登录框样式是否统一。凡是在搜索页之外突然要求输入密码的弹窗，都应先关闭并重新从地址栏进入。</div>
+        </details>
+        <details>
+          <summary>手机上使用体验如何？</summary>
+          <div class="ans">网页版会按屏幕宽度自适应，搜索框与按钮会放大到适合触屏的尺寸。手机浏览器同样支持保存登录状态，但建议为设备设置锁屏密码，降低账号被他人使用的风险。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" style="width:28px;height:28px;flex:0 0 28px">
+            <rect width="64" height="64" rx="14" fill="#e0322a"/>
+            <path d="M22 14h14c8 0 13 5 13 12 0 5-3 9-7 11l9 13h-9l-8-12h-4v12h-8V14zm8 7v10h6c3 0 5-2 5-5s-2-5-5-5h-6z" fill="#fff"/>
+          </svg>
+          <span>yandex网页版入口</span>
+        </div>
+        <p>整理网页版入口、访问步骤与常见问题，帮助你在浏览器中快速找到需要的页面。内容以实用说明为主，不涉及账号代操作。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#entries">入口分类</a></li>
+          <li><a href="#steps">访问步骤</a></li>
+          <li><a href="#howto">网页版说明</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提示</h4>
+        <ul>
+          <li><a href="#faq">核对域名再登录</a></li>
+          <li><a href="#howto">公用设备及时退出</a></li>
+          <li><a href="#steps">保持浏览器为较新版本</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 yandex网页版入口 · 页面内容仅供访问参考</span>
+      <span>入口以官方实际页面为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
