@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛mrds平台-每日大赛mrds热点合集_mrds平台大赛榜单</title>
+<meta name="description" content="每日大赛mrds平台热点内容首页，汇总当日大赛热门条目、榜单变化与网友讨论焦点，帮助访客快速了解每日大赛mrds平台的热点走向与内容分布。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315131f'/%3E%3Cpath d='M18 40l8-16 6 10 5-8 9 14z' fill='%23ffb648'/%3E%3Ccircle cx='46' cy='20' r='5' fill='%23ff5a7a'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#12101a;
+    --bg-soft:#1a1726;
+    --card:#211d31;
+    --line:#332d4a;
+    --text:#efeaf7;
+    --muted:#a49cbb;
+    --accent:#ffb648;
+    --accent2:#ff5a7a;
+    --accent3:#6fd6c4;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    background:
+      radial-gradient(900px 500px at 85% -10%,rgba(255,90,122,.18),transparent 60%),
+      radial-gradient(800px 480px at 5% 0%,rgba(111,214,196,.13),transparent 60%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(14px);
+    background:rgba(18,16,26,.82);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:12px 0;flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:10px;min-width:0;}
+  .brand svg{width:38px;height:38px;flex:none;}
+  .brand .name{
+    font-size:1.02rem;font-weight:700;letter-spacing:.3px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  nav.main{display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main a{
+    font-size:.9rem;color:var(--muted);padding:6px 12px;border-radius:999px;
+    border:1px solid transparent;transition:.2s;
+  }
+  nav.main a:hover{color:var(--text);border-color:var(--line);background:var(--bg-soft);}
+
+  /* hero */
+  .hero{padding:52px 0 34px;}
+  .hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:36px;align-items:center;}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.78rem;letter-spacing:2px;color:var(--accent);
+    border:1px solid rgba(255,182,72,.4);border-radius:999px;
+    padding:4px 12px;margin-bottom:18px;background:rgba(255,182,72,.08);
+  }
+  .kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent2);}
+  h1{
+    font-size:clamp(1.75rem,4.2vw,2.9rem);
+    line-height:1.28;margin:0 0 16px;font-weight:800;letter-spacing:.5px;
+  }
+  h1 .hl{
+    background:linear-gradient(100deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lead{color:var(--muted);font-size:1.02rem;margin:0 0 24px;max-width:36em;}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 22px;border-radius:12px;font-size:.95rem;font-weight:600;
+    border:1px solid transparent;transition:.2s;
+  }
+  .btn-primary{background:linear-gradient(100deg,var(--accent),#ff8f4d);color:#241a06;}
+  .btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px);}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:var(--bg-soft);}
+  .btn-ghost:hover{border-color:var(--accent3);color:var(--accent3);}
+
+  .hero-card{
+    background:linear-gradient(160deg,var(--card),#191527);
+    border:1px solid var(--line);border-radius:22px;padding:22px;
+    box-shadow:0 24px 60px -30px rgba(0,0,0,.9);
+  }
+  .hero-card h2{font-size:.92rem;margin:0 0 14px;color:var(--muted);font-weight:600;letter-spacing:1px;}
+  .mini-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+  .mini-list li{
+    display:flex;align-items:center;gap:12px;
+    background:rgba(255,255,255,.03);border:1px solid var(--line);
+    border-radius:12px;padding:9px 12px;font-size:.9rem;
+  }
+  .mini-list .tag{
+    font-size:.72rem;padding:2px 8px;border-radius:6px;flex:none;font-weight:700;
+    background:rgba(255,90,122,.16);color:var(--accent2);
+  }
+  .mini-list .tag.cool{background:rgba(111,214,196,.14);color:var(--accent3);}
+  .mini-list .tag.warm{background:rgba(255,182,72,.15);color:var(--accent);}
+  .mini-list span.txt{color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+  /* sections */
+  section{padding:44px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap;}
+  .sec-head h2{font-size:1.35rem;margin:0;font-weight:750;}
+  .sec-head p{margin:6px 0 0;color:var(--muted);font-size:.9rem;}
+  .sec-head .more{font-size:.85rem;color:var(--accent3);}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;display:flex;flex-direction:column;gap:10px;transition:.22s;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(255,182,72,.45);}
+  .card .ico{
+    width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
+    background:rgba(255,182,72,.12);color:var(--accent);
+  }
+  .card h3{margin:0;font-size:1.02rem;}
+  .card p{margin:0;color:var(--muted);font-size:.9rem;}
+
+  /* ranking table */
+  .board{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .board-row{
+    display:grid;grid-template-columns:56px 1fr 120px 96px;
+    gap:12px;align-items:center;padding:14px 20px;
+    border-bottom:1px solid var(--line);font-size:.93rem;
+  }
+  .board-row:last-child{border-bottom:none;}
+  .board-row.head{
+    font-size:.78rem;letter-spacing:1px;color:var(--muted);
+    background:rgba(255,255,255,.03);
+  }
+  .rank{
+    font-weight:800;font-size:1.05rem;color:var(--muted);
+    font-variant-numeric:tabular-nums;
+  }
+  .board-row:nth-child(2) .rank{color:var(--accent);}
+  .board-row:nth-child(3) .rank{color:var(--accent2);}
+  .board-row:nth-child(4) .rank{color:var(--accent3);}
+  .board-row .title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .bar{height:6px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;}
+  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent3),var(--accent));}
+  .num{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;}
+
+  /* article block */
+  .split{display:grid;grid-template-columns:1.4fr .8fr;gap:26px;align-items:start;}
+  .prose h3{font-size:1.05rem;margin:22px 0 8px;}
+  .prose h3:first-child{margin-top:0;}
+  .prose p{margin:0 0 12px;color:#d6cfe6;font-size:.95rem;}
+  .prose strong{color:var(--accent);font-weight:700;}
+  .aside{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+  }
+  .aside h4{margin:0 0 12px;font-size:.95rem;}
+  .aside ul{margin:0;padding-left:18px;color:var(--muted);font-size:.88rem;display:grid;gap:8px;}
+  .aside .note{
+    margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);
+    font-size:.8rem;color:var(--muted);
+  }
+
+  /* faq */
+  .faq{display:grid;gap:12px;}
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;
+  }
+  details summary{
+    cursor:pointer;font-weight:600;font-size:.95rem;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"+";color:var(--accent);font-weight:700;font-size:1.1rem;}
+  details[open] summary::after{content:"–";}
+  details p{margin:10px 0 0;color:var(--muted);font-size:.9rem;}
+
+  /* download strip */
+  .strip{
+    display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    background:linear-gradient(100deg,rgba(255,182,72,.13),rgba(255,90,122,.1));
+    border:1px solid rgba(255,182,72,.35);border-radius:18px;padding:22px 26px;
+  }
+  .strip h3{margin:0 0 4px;font-size:1.1rem;}
+  .strip p{margin:0;color:var(--muted);font-size:.88rem;}
+  .btn[aria-disabled="true"]{opacity:.75;cursor:default;pointer-events:none;}
+
+  footer.site{
+    border-top:1px solid var(--line);margin-top:20px;padding:28px 0 34px;
+    color:var(--muted);font-size:.85rem;
+  }
+  .foot-grid{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center;}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:700;}
+  .foot-brand svg{width:28px;height:28px;}
+  .foot-links{display:flex;gap:16px;flex-wrap:wrap;}
+  .foot-links a:hover{color:var(--accent);}
+  .foot-note{width:100%;margin-top:14px;font-size:.78rem;line-height:1.7;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:26px;}
+    .cards{grid-template-columns:1fr 1fr;}
+    .split{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    .hero{padding:34px 0 24px;}
+    .cards{grid-template-columns:1fr;}
+    .board-row{grid-template-columns:38px 1fr;grid-template-areas:"rank title" ". bar";padding:12px 14px;gap:6px 10px;}
+    .board-row .num{display:none;}
+    .board-row.head{display:none;}
+    .board-row .rank{grid-area:rank;}
+    .board-row .title{grid-area:title;white-space:normal;}
+    .board-row .bar{grid-area:bar;}
+    .lead{font-size:.95rem;}
+    .strip{padding:18px;}
+    section{padding:32px 0;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap topbar">
+    <a class="brand" href="#top" aria-label="每日大赛mrds平台 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#211d31"/>
+        <path d="M16 42l9-18 7 12 5-9 11 15z" fill="#ffb648"/>
+        <circle cx="47" cy="19" r="5" fill="#ff5a7a"/>
+      </svg>
+      <span class="name">每日大赛mrds平台</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#today">今日热点</a>
+      <a href="#board">热度榜单</a>
+      <a href="#read">内容观察</a>
+      <a href="#faq">常见疑问</a>
+      <a href="#get">获取入口</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">热点内容 · 每日更新</span>
+        <h1>每日大赛mrds平台</h1>
+        <p class="lead">这里把当天在 <strong>每日大赛mrds平台</strong> 上被反复讨论的条目集中呈现：谁在升温、哪些话题被顶到前排、网友的关注点落在了哪里。页面按热度而非时间排序，方便你一次看清当天的主线。</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="#board">
+            查看今日榜单
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#read">先读内容观察</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="实时热度速览">
+        <h2>热度速览</h2>
+        <ul class="mini-list">
+          <li><span class="tag">升温</span><span class="txt">晚间档话题集中度上升</span></li>
+          <li><span class="tag warm">稳定</span><span class="txt">老条目仍在榜单中段停留</span></li>
+          <li><span class="tag cool">回落</span><span class="txt">上午热帖讨论量趋于平缓</span></li>
+          <li><span class="tag">新进</span><span class="txt">多条新内容进入前二十</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section id="today">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>今日热点分区</h2>
+          <p>按内容类型拆分，每类只保留当天最值得先看的部分。</p>
+        </div>
+        <a class="more" href="#board">进入完整榜单 →</a>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>
+          </div>
+          <h3>突发讨论</h3>
+          <p>短时间内被大量转述的条目，特征是同一条内容在多个入口同时出现。每日大赛mrds平台的突发讨论通常集中在晚间时段。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9M10 19V4M16 19v-7M22 19H2"/></svg>
+          </div>
+          <h3>走势变化</h3>
+          <p>关注名次升降而非绝对热度。上升快的条目往往在次日仍有余温，回落条目则说明讨论已进入尾声。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V6a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+          </div>
+          <h3>讨论焦点</h3>
+          <p>把评论区反复出现的疑问归纳出来，帮助你判断一条内容为什么被推上前排，而不是只看标题。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOARD -->
+  <section id="board">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>热度榜单</h2>
+          <p>按当前讨论量排序，数值为页面内的相对热度示意，非平台官方统计。</p>
+        </div>
+      </div>
+      <div class="board" role="table" aria-label="热度榜单">
+        <div class="board-row head" role="row">
+          <span>名次</span><span>条目</span><span>热度走势</span><span class="num">指数</span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="rank">01</span>
+          <span class="title">晚间档话题集中出现</span>
+          <span class="bar"><i style="width:94%"></i></span>
+          <span class="num">94</span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="rank">02</span>
+          <span class="title">同一内容多入口同步</span>
+          <span class="bar"><i style="width:86%"></i></span>
+          <span class="num">86</span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="rank">03</span>
+          <span class="title">评论区追问持续增加</span>
+          <span class="bar"><i style="width:78%"></i></span>
+          <span class="num">78</span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="rank">04</span>
+          <span class="title">上午热帖讨论趋缓</span>
+          <span class="bar"><i style="width:61%"></i></span>
+          <span class="num">61</span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="rank">05</span>
+          <span class="title">旧条目中段停留</span>
+          <span class="bar"><i style="width:52%"></i></span>
+          <span class="num">52</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- READ -->
+  <section id="read">
+    <div class="wrap split">
+      <div class="prose">
+        <h2 style="font-size:1.35rem;margin:0 0 18px;">内容观察</h2>
+        <h3>为什么榜单会「晚上更强」</h3>
+        <p>在每日大赛mrds平台的内容流里，晚间是讨论密度最高的时段。白天条目多以零散提及为主，到了晚间，同一话题被不同用户同时拾起，热度指数在短时间内叠加。这也意味着，早上的榜单名次并不代表全天走势。</p>
+        <h3>名次升降比绝对热度更有用</h3>
+        <p>一条内容排在第一，可能是刚上线的新鲜度在支撑；而一条内容从第十五名爬到第五名，往往说明讨论正在扩散。观察每日大赛mrds平台的榜单时，连续两次查看之间的名次变化，比单次的名次本身更能说明问题。</p>
+        <h3>讨论焦点常与标题错位</h3>
+        <p>标题写的是事件，评论区聊的却常是其中的细节或前后背景。把焦点归纳出来，能避免只凭标题判断内容价值。这也是本页单独设置「讨论焦点」分区的原因：它记录的是读者真正在问什么。</p>
+        <h3>如何看待热度数值</h3>
+        <p>页面中的热度指数为相对示意，用于比较条目之间的强弱关系，不代表平台发布的任何官方统计。不同时段的数值之间不直接做横向比较，只用于同日内的排序参考。</p>
+      </div>
+      <aside class="aside">
+        <h4>阅读提示</h4>
+        <ul>
+          <li>先看名次变化，再看绝对热度。</li>
+          <li>评论区反复出现的问题，通常是内容的关键。</li>
+          <li>同一话题跨时段对比，判断是否仍在扩散。</li>
+          <li>榜单仅作排序参考，不构成事实认定。</li>
+        </ul>
+        <div class="note">本页内容为热点观察性描述，具体条目以实际页面展示为准。</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>常见疑问</h2>
+          <p>访客在浏览每日大赛mrds平台时最常提出的几个问题。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>每日大赛mrds平台的榜单多久变化一次？</summary>
+          <p>热度排序随时段波动，晚间变化最明显。建议每隔几小时刷新一次，观察名次升降而非只看单次结果。</p>
+        </details>
+        <details>
+          <summary>热度指数是官方数据吗？</summary>
+          <p>不是。页面中的指数为相对热度示意，用于同日内的强弱比较，不来自平台官方统计，也不代表任何评价结论。</p>
+        </details>
+        <details>
+          <summary>为什么同一条内容会反复出现在不同分区？</summary>
+          <p>不同分区承担不同任务：热点分区看类型，榜单看排序，观察区看原因。同一条内容在不同分区出现时，呈现的是不同侧面。</p>
+        </details>
+        <details>
+          <summary>页面内容可以引用吗？</summary>
+          <p>页面文字为热点观察性描述，引用时请保留「相对热度示意」这一前提，避免将其当作确定数据。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET -->
+  <section id="get">
+    <div class="wrap">
+      <div class="strip">
+        <div>
+          <h3>获取入口</h3>
+          <p>主题资源整理中，当前入口暂未开放，开放后将在此处提供。</p>
+        </div>
+        <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#211d31"/>
+        <path d="M16 42l9-18 7 12 5-9 11 15z" fill="#ffb648"/>
+        <circle cx="47" cy="19" r="5" fill="#ff5a7a"/>
+      </svg>
+      每日大赛mrds平台
+    </div>
+    <div class="foot-links">
+      <a href="#today">今日热点</a>
+      <a href="#board">热度榜单</a>
+      <a href="#read">内容观察</a>
+      <a href="#faq">常见疑问</a>
+    </div>
+    <p class="foot-note">每日大赛mrds平台以热点观察为主，页面中的名次与热度指数均为相对示意，用于帮助访客理解当天讨论的分布与走向，不构成对任何条目的定性判断。内容随讨论变化而调整，请以实际页面展示为准。</p>
+  </div>
+</footer>
+
+</body>
+            </html>
